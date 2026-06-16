@@ -5,7 +5,7 @@
 // partial locales should use `defineLocale()` so missing desktop-only strings
 // fall back to English while new keys remain type-checked.
 
-export type Locale = 'en' | 'zh' | 'zh-hant' | 'ja'
+export type Locale = 'en' | 'zh' | 'zh-hant' | 'ja' | 'uk'
 
 interface ModeOptionCopy {
   label: string
@@ -572,6 +572,10 @@ export interface Translations {
     durationMinutes: (minutes: number, seconds: number) => string
     tokensK: (k: string) => string
     tokens: (value: number) => string
+  }
+
+  agentRoom: {
+    title: string
   }
 
   commandCenter: {
@@ -1223,6 +1227,8 @@ export interface Translations {
       gatewayConnecting: string
       gatewayOffline: string
       gatewayTitle: string
+      agentRoom: string
+      openAgentRoom: string
       agents: string
       closeAgents: string
       openAgents: string

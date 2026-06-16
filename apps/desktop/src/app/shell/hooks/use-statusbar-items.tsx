@@ -53,10 +53,11 @@ import {
 } from '@/store/updates'
 import type { StatusResponse } from '@/types/hermes'
 
-import { CRON_ROUTE } from '../../routes'
+import { AGENT_ROOM_ROUTE, CRON_ROUTE } from '../../routes'
 import type { StatusbarItem, StatusbarSelectModifiers } from '../statusbar-controls'
 
 interface StatusbarItemsOptions {
+  agentRoomOpen: boolean
   agentsOpen: boolean
   chatOpen: boolean
   commandCenterOpen: boolean
@@ -75,6 +76,7 @@ interface StatusbarItemsOptions {
 }
 
 export function useStatusbarItems({
+  agentRoomOpen,
   agentsOpen,
   chatOpen,
   commandCenterOpen,
@@ -351,6 +353,15 @@ export function useStatusbarItems({
         variant: 'action'
       },
       {
+        className: agentRoomOpen ? 'bg-accent/55 text-foreground' : undefined,
+        icon: <Users className="size-3" />,
+        id: 'agent-room',
+        label: copy.agentRoom,
+        title: copy.openAgentRoom,
+        to: AGENT_ROOM_ROUTE,
+        variant: 'action'
+      },
+      {
         icon: <Clock className="size-3" />,
         id: 'cron',
         label: copy.cron,
@@ -360,6 +371,7 @@ export function useStatusbarItems({
       }
     ],
     [
+      agentRoomOpen,
       agentsOpen,
       bgFailed,
       bgRunning,

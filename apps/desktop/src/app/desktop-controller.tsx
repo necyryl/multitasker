@@ -124,6 +124,7 @@ import type { TitlebarTool } from './shell/titlebar-controls'
 import { useGroupRegistry } from './shell/use-group-registry'
 import { UpdatesOverlay } from './updates-overlay'
 
+const AgentRoomView = lazy(async () => ({ default: (await import('./agent-room')).AgentRoomView }))
 const AgentsView = lazy(async () => ({ default: (await import('./agents')).AgentsView }))
 const ArtifactsView = lazy(async () => ({ default: (await import('./artifacts')).ArtifactsView }))
 const CommandCenterView = lazy(async () => ({ default: (await import('./command-center')).CommandCenterView }))
@@ -839,6 +840,7 @@ export function DesktopController() {
   })
 
   const { leftStatusbarItems, statusbarItems } = useStatusbarItems({
+    agentRoomOpen: currentView === 'agent-room',
     agentsOpen,
     chatOpen,
     commandCenterOpen,
@@ -1090,6 +1092,14 @@ export function DesktopController() {
         <Routes>
           <Route element={chatView} index />
           <Route element={chatView} path=":sessionId" />
+          <Route
+            element={
+              <Suspense fallback={null}>
+                <AgentRoomView />
+              </Suspense>
+            }
+            path="agent-room"
+          />
           <Route
             element={
               <Suspense fallback={null}>

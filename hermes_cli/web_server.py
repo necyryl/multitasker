@@ -90,6 +90,7 @@ except ImportError:
         )
 
 WEB_DIST = Path(os.environ["HERMES_WEB_DIST"]) if "HERMES_WEB_DIST" in os.environ else Path(__file__).parent / "web_dist"
+AGENT_ROOM_DIST = Path(__file__).resolve().parent.parent / "apps" / "agent-room" / "dist" / "webview"
 _log = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
@@ -10343,6 +10344,53 @@ async def _broadcast_event(app: Any, channel: str, payload: str) -> None:
             _log.warning("broadcast send failed for subscriber on %s", channel, exc_info=True)
 
 
+def _get_agent_room_bridge(app: Any) -> Any:
+    """Lazily build the process-wide Agent Room event translator (on app.state).
+
+    One bridge per dashboard process so its "announced agents" set spans every
+    chat PTY publisher — the office shows all live agents at once.
+    """
+    bridge = getattr(app.state, "agent_room_bridge", None)
+    if bridge is None:
+        from hermes_cli.agent_room_events import AgentRoomBridge
+
+        bridge = AgentRoomBridge()
+        app.state.agent_room_bridge = bridge
+    return bridge
+
+
+async def _relay_agent_room(app: Any, raw_text: str) -> None:
+    """Best-effort: translate one gateway pub frame → Agent Room BridgeEvents
+    and fan out to the ``agent-room`` channel.
+
+    MUST NOT disturb the primary chat relay: every failure path returns quietly.
+    Skips all work when the office is closed (no ``agent-room`` subscribers).
+    """
+    from hermes_cli.agent_room_events import CHANNEL
+
+    event_channels, event_lock = _get_event_state(app)
+    async with event_lock:
+        has_subs = bool(event_channels.get(CHANNEL))
+    if not has_subs:
+        return
+    try:
+        msg = json.loads(raw_text)
+    except Exception:
+        return
+    if not (isinstance(msg, dict) and msg.get("method") == "event"):
+        return
+    params = msg.get("params")
+    if not isinstance(params, dict):
+        return
+    try:
+        events = _get_agent_room_bridge(app).ingest(params)
+    except Exception:
+        _log.debug("agent-room translate failed", exc_info=True)
+        return
+    for ev in events:
+        await _broadcast_event(app, CHANNEL, json.dumps(ev))
+
+
 def _channel_or_close_code(ws: WebSocket) -> Optional[str]:
     """Return the channel id from the query string or None if invalid."""
     channel = ws.query_params.get("channel", "")
@@ -10565,9 +10613,16 @@ async def pub_ws(ws: WebSocket) -> None:
 
     await ws.accept()
 
+    from hermes_cli.agent_room_events import CHANNEL as _AGENT_ROOM_CHANNEL
+
     try:
         while True:
-            await _broadcast_event(ws.app, channel, await ws.receive_text())
+            raw = await ws.receive_text()
+            await _broadcast_event(ws.app, channel, raw)
+            # Mirror the same event into the Agent Room office (parallel channel).
+            # Guarded + best-effort; the chat relay above is the source of truth.
+            if channel != _AGENT_ROOM_CHANNEL:
+                await _relay_agent_room(ws.app, raw)
     except WebSocketDisconnect:
         pass
 
@@ -10724,6 +10779,27 @@ def mount_spa(application: FastAPI):
         return Response(content=css, media_type="text/css")
 
     application.mount("/assets", StaticFiles(directory=WEB_DIST / "assets"), name="assets")
+
+    @application.get("/agent-room")
+    @application.get("/agent-room/{full_path:path}")
+    async def serve_agent_room(full_path: str = ""):
+        index_path = AGENT_ROOM_DIST / "index.html"
+        if not index_path.is_file():
+            return JSONResponse(
+                {"detail": "agent-room office bundle not built"},
+                status_code=404,
+            )
+
+        file_path = AGENT_ROOM_DIST / full_path
+        if (
+            full_path
+            and file_path.resolve().is_relative_to(AGENT_ROOM_DIST.resolve())
+            and file_path.exists()
+            and file_path.is_file()
+        ):
+            return FileResponse(file_path)
+
+        return FileResponse(index_path)
 
     @application.get("/{full_path:path}")
     async def serve_spa(full_path: str, request: Request):

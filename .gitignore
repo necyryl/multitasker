@@ -136,3 +136,32 @@ RELEASE_v*.md
 # Desktop demo-run scratch output (hermes writes demo/*.txt during recorded
 # walkthroughs). Throwaway artifacts, never part of the app.
 apps/desktop/demo/
+
+# Obsidian vault config (docs/brain opened as a vault)
+.obsidian/
+**/.obsidian/
+
+# Agent-room local build/runtime artifacts
+assets/agent-room/
+apps/agent-room/node_modules/
+apps/agent-room/**/node_modules/
+apps/agent-room/dist/
+apps/agent-room/**/dist/
+apps/agent-room/_*.log
+apps/agent-room/_codex-report.md
+
+# Agent scratch logs and handoff prompts
+.codex-*.log
+.codex-*.txt
+.codex-report-*.md
+.codex-task-*.md
+.qwen-task-*.md
+_loc/*.log
+_frame*.png
+_contact.png
+_decode_frame.py
+
+# Graphify generated cache; keep graph/report metadata separately.
+.graphify/graph.json
+.graphify/cache/
+.graphify/extract.log

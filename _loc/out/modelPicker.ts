@@ -1,0 +1,17 @@
+modelPicker: {
+    title: 'Перемкнути модель',
+    current: 'поточна:',
+    unknown: '(невідомо)',
+    search: 'Фільтрувати провайдерів та моделі...',
+    noModels: 'Не знайдено моделей.',
+    persistGlobalSession: 'Зберегти глобально (інакше лише для цієї сесії)',
+    persistGlobal: 'Зберегти глобально',
+    addProvider: 'Додати провайдера',
+    loadFailed: 'Не вдалося завантажити моделі',
+    noAuthenticatedProviders: 'Немає автентифікованих провайдерів.',
+    pro: 'Pro',
+    proNeedsSubscription: 'Моделі Pro потребують платної підписки Nous.',
+    free: 'Безкоштовна',
+    freeTier: 'Безкоштовний тариф',
+    priceTitle: 'Ціна вводу / виводу за мільйон токенів'
+  },

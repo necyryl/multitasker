@@ -1,0 +1,14 @@
+{
+  "name": "@multitasker/agent-room",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "workspaces": [
+    "webview-ui"
+  ],
+  "scripts": {
+    "dev": "npm --prefix webview-ui run dev",
+    "build": "npm --prefix webview-ui run build",
+    "typecheck": "cd webview-ui && tsc -b && tsc -p ../tsconfig.json --noEmit"
+  }
+}

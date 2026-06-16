@@ -188,6 +188,7 @@ export const en: Translations = {
       'nav.artifacts': 'Open artifacts',
       'nav.cron': 'Open scheduled jobs',
       'nav.agents': 'Open agents',
+      'nav.agentRoom': 'Open Agent Room',
       'session.new': 'New session',
       'session.next': 'Next session',
       'session.prev': 'Previous session',
@@ -692,6 +693,10 @@ export const en: Translations = {
     durationMinutes: (minutes, seconds) => `${minutes}m ${seconds}s`,
     tokensK: k => `${k}k tok`,
     tokens: value => `${value} tok`
+  },
+
+  agentRoom: {
+    title: 'Agent Room'
   },
 
   commandCenter: {
@@ -1579,6 +1584,8 @@ export const en: Translations = {
       gatewayConnecting: 'connecting',
       gatewayOffline: 'offline',
       gatewayTitle: 'Hermes inference gateway status',
+      agentRoom: 'Agent Room',
+      openAgentRoom: 'Open Agent Room',
       agents: 'Agents',
       closeAgents: 'Close agents',
       openAgents: 'Open agents',

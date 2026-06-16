@@ -46,6 +46,7 @@ import { type ThemeMode, useTheme } from '@/themes/context'
 import { isUserTheme, resolveTheme } from '@/themes/user-themes'
 
 import {
+  AGENT_ROOM_ROUTE,
   AGENTS_ROUTE,
   ARTIFACTS_ROUTE,
   COMMAND_CENTER_ROUTE,
@@ -332,6 +333,14 @@ export function CommandPalette() {
             keywords: ['schedule', 'jobs'],
             label: t.shell.statusbar.cron,
             run: go(CRON_ROUTE)
+          },
+          {
+            action: 'nav.agentRoom',
+            icon: Users,
+            id: 'nav-agent-room',
+            keywords: ['office', 'room', 'subagents'],
+            label: t.agentRoom.title,
+            run: go(AGENT_ROOM_ROUTE)
           },
           { action: 'nav.profiles', icon: Users, id: 'nav-profiles', label: t.profiles.title, run: go(PROFILES_ROUTE) },
           { action: 'nav.agents', icon: Cpu, id: 'nav-agents', label: t.agents.title, run: go(AGENTS_ROUTE) }
