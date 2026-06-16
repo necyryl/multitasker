@@ -15,6 +15,7 @@ tags: [journal, state, volatile]
 - Created backup branch codex/backup-2026-06-16 before staging/committing.
 - Staged backup set was checked before commit: `_loc/*.log` excluded, graphify cache/build artifacts excluded, `.graphify/graph.json` is an LFS pointer in the index, and the old local prototype path `assets/agent-room/` is excluded from GitHub.
 - Push attempt hit GitHub LFS permissions for `.graphify/graph.json`; graph JSON is now local-only via `.gitignore`, with graph report/manifest metadata still committed.
+- GitHub credential helper was switched to Git Credential Manager and backup branch `codex/backup-2026-06-16` was pushed to `origin` at commit `718303ee1`.
 ## ═══ RESUME POINT — new session start here (2026-06-16, end of s4) ═══
 Mission: adapt Multitasker (fork of NousResearch/hermes-agent) for the owner = full UK localization +
 integrate pixel-agents (Agent Room) + graphify as memory. Roles: Claude=orchestrator; Codex=integration;
