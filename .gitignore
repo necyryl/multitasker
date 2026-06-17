@@ -145,8 +145,11 @@ apps/desktop/demo/
 assets/agent-room/
 apps/agent-room/node_modules/
 apps/agent-room/**/node_modules/
-apps/agent-room/dist/
-apps/agent-room/**/dist/
+# Keep the built office bundle (served at /agent-room) tracked so fresh
+# clones / the packaged exe don't 404; ignore the rest of dist/.
+apps/agent-room/dist/*
+!apps/agent-room/dist/webview/
+apps/agent-room/webview-ui/dist/
 apps/agent-room/_*.log
 apps/agent-room/_codex-report.md
 
