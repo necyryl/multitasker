@@ -92,8 +92,8 @@ try {
 # Configuration
 # ============================================================================
 
-$RepoUrlSsh = "git@github.com:NousResearch/hermes-agent.git"
-$RepoUrlHttps = "https://github.com/NousResearch/hermes-agent.git"
+$RepoUrlSsh = "git@github.com:necyryl/multitasker.git"
+$RepoUrlHttps = "https://github.com/necyryl/multitasker.git"
 $PythonVersion = "3.11"
 $NodeVersion = "22"
 

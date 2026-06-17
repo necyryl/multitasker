@@ -1,3 +1,4 @@
+import { FIELD_DESCRIPTIONS, FIELD_LABELS } from '@/app/settings/constants'
 import { defineLocale } from './define-locale'
 
 export const uk = defineLocale({
@@ -40,25 +41,25 @@ export const uk = defineLocale({
       off: 'Вимк.'
     },
   boot: {
-      ready: 'Hermes Desktop готовий',
+      ready: 'Multitasker Desktop готовий',
       desktopBootFailedWithMessage: message => `Запуск робочого столу не вдався: ${message}`,
       steps: {
         connectingGateway: 'Підключення до шлюзу реального часу',
-        loadingSettings: 'Завантаження налаштувань Hermes',
+        loadingSettings: 'Завантаження налаштувань Multitasker',
         loadingSessions: 'Завантаження нещодавніх сеансів',
         startingDesktopConnection: 'Встановлення з’єднання робочого столу',
-        startingHermesDesktop: 'Запуск Hermes Desktop…'
+        startingHermesDesktop: 'Запуск Multitasker Desktop…'
       },
       errors: {
-        backgroundExited: 'Фоновий процес Hermes завершено.',
-        backgroundExitedDuringStartup: 'Фоновий процес Hermes завершено під час запуску.',
+        backgroundExited: 'Фоновий процес Multitasker завершено.',
+        backgroundExitedDuringStartup: 'Фоновий процес Multitasker завершено під час запуску.',
         backendStopped: 'Backend зупинено',
         desktopBootFailed: 'Запуск робочого столу не вдався',
         gatewaySignInRequired: 'Потрібно увійти в шлюз',
         ipcBridgeUnavailable: 'Міст IPC для робочого столу недоступний.'
       },
       failure: {
-        title: "Hermes не може запуститися",
+        title: "Multitasker не може запуститися",
         description:
           "Фоновий шлюз не запущено. Спробуйте один із способів відновлення нижче. Тут нічого не видаляється з ваших чатів або налаштувань.",
         remoteTitle: 'Потрібно увійти в віддалений шлюз',
@@ -94,8 +95,8 @@ export const uk = defineLocale({
       copyDetailFailed: 'Не вдалося скопіювати деталі сповіщення',
       backendOutOfDateTitle: 'Застарілий бекенд',
       backendOutOfDateMessage:
-        'Ваш Hermes backend застарів порівняно з цією десктопною версією і може працювати некоректно. Оновіть, щоб узгодити їх.',
-      updateHermes: 'Оновити Hermes',
+        'Ваш Multitasker backend застарів порівняно з цією десктопною версією і може працювати некоректно. Оновіть, щоб узгодити їх.',
+      updateHermes: 'Оновити Multitasker',
       updateReadyTitle: 'Оновлення готове',
       updateReadyMessage: count => `${count} нових змін${count === 1 ? '' : 'и'} доступні.`,
       seeWhatsNew: "Переглянути новинки",
@@ -103,7 +104,7 @@ export const uk = defineLocale({
         elevenLabsNeedsKey: 'ElevenLabs STT потребує ELEVENLABS_API_KEY.',
         elevenLabsRejectedKey: 'ElevenLabs відхилив API-ключ (401).',
         methodNotAllowed:
-          'Бекенд десктопної програми відхилив цей запит (405 Method Not Allowed). Спробуйте перезапустити Hermes Desktop.',
+          'Бекенд десктопної програми відхилив цей запит (405 Method Not Allowed). Спробуйте перезапустити Multitasker Desktop.',
         microphonePermission: 'Дозвіл на використання мікрофона було відмовлено.',
         openaiRejectedApiKey: 'OpenAI відхилив API-ключ.',
         openaiRejectedApiKeyWithStatus: status => `OpenAI відхилив API-ключ (${status} invalid_api_key).`,
@@ -133,8 +134,8 @@ export const uk = defineLocale({
         approveAction: 'Підтвердити',
         rejectAction: 'Відхилити',
         inputTitle: 'Потрібен ввід даних',
-        inputBody: 'Hermes очікує на вашу відповідь.',
-        turnDoneTitle: 'Hermes завершив роботу',
+        inputBody: 'Multitasker очікує на вашу відповідь.',
+        turnDoneTitle: 'Multitasker завершив роботу',
         turnDoneBody: 'Відповідь готова.',
         turnErrorTitle: 'Хід невдалий',
         backgroundDoneTitle: 'Фонове завдання виконано',
@@ -255,7 +256,7 @@ export const uk = defineLocale({
       exportConfig: 'Експортувати конфігурацію',
       importConfig: 'Імпортувати конфігурацію',
       resetToDefaults: 'Скинути до значень за замовчуванням',
-      resetConfirm: 'Скинути всі налаштування до стандартних значень Hermes?',
+      resetConfirm: 'Скинути всі налаштування до стандартних значень Multitasker?',
       exportFailed: 'Експорт не вдався',
       resetFailed: 'Скидання не вдалося',
       nav: {
@@ -277,7 +278,7 @@ export const uk = defineLocale({
           'Нативні десктопні сповіщення, відмінні від вбудованих спливаючих вікон. Ці сповіщення зберігаються локально на пристрої — кожен комп’ютер зберігає власні налаштування.',
         enableAll: 'Увімкнути сповіщення',
         enableAllDesc: 'Головний перемикач. Вимкніть його, щоб вимкнути всі сповіщення нижче.',
-        focusedHint: 'Сповіщення про завершення спрацьовують лише тоді, коли Hermes працює у фоновому режимі.',
+        focusedHint: 'Сповіщення про завершення спрацьовують лише тоді, коли Multitasker працює у фоновому режимі.',
         kinds: {
           approval: {
             label: 'Потрібне підтвердження',
@@ -285,11 +286,11 @@ export const uk = defineLocale({
           },
           input: {
             label: 'Потрібен ввід даних',
-            description: 'Hermes запитав питання або потребує пароль чи секретний ключ.'
+            description: 'Multitasker запитав питання або потребує пароль чи секретний ключ.'
           },
           turnDone: {
             label: 'Відповідь готова',
-            description: 'Хід завершено, коли Hermes працював у фоновому режимі.'
+            description: 'Хід завершено, коли Multitasker працював у фоновому режимі.'
           },
           turnError: {
             label: 'Хід не вдався',
@@ -301,7 +302,7 @@ export const uk = defineLocale({
           }
         },
         test: 'Надіслати тестове сповіщення',
-        testTitle: 'Hermes',
+        testTitle: 'Multitasker',
         testBody: 'Сповіщення працюють.',
         testSent: 'Тест надіслано. Якщо нічого не з’являється, перевірте дозволи на сповіщення ОС та режим "Не турбувати".',
         testUnsupported: 'Ця система не підтримує нативні сповіщення.',
@@ -320,7 +321,7 @@ export const uk = defineLocale({
         advanced: 'Додатково'
       },
       searchPlaceholder: {
-        about: 'Про Hermes Desktop',
+        about: 'Про Multitasker Desktop',
         config: 'Пошук налаштувань...',
         gateway: 'Підключення до шлюзу...',
         keys: 'Пошук API-ключів...',
@@ -337,7 +338,7 @@ export const uk = defineLocale({
         intro:
           'Це параметри відображення, які діють лише на десктопі. Режим контролює яскравість; тема — колірну палітру та стиль поверхні чату.',
         colorMode: 'Кольоровий режим',
-        colorModeDesc: 'Виберіть фіксований режим або дозвольте Hermes слідувати налаштуванням вашої системи.',
+        colorModeDesc: 'Виберіть фіксований режим або дозвольте Multitasker слідувати налаштуванням вашої системи.',
         toolViewTitle: 'Відображення викликів інструментів',
         toolViewDesc: 'Режим "Продукт" приховує необроблені корисні дані інструментів; "Технічний" показує повний вхід/вихід.',
         translucencyTitle: 'Прозорість вікна',
@@ -363,7 +364,7 @@ export const uk = defineLocale({
       fieldLabels: FIELD_LABELS,
       fieldDescriptions: FIELD_DESCRIPTIONS,
       about: {
-        heading: 'Hermes Desktop',
+        heading: 'Multitasker Desktop',
         version: value => `Версія ${value}`,
         versionUnavailable: 'Версію не вдалося визначити',
         updates: 'Оновлення',
@@ -381,7 +382,7 @@ export const uk = defineLocale({
         justNowSuffix: ' · щойно',
         automaticUpdates: 'Автоматичні оновлення',
         automaticUpdatesDesc:
-          'Hermes автоматично перевіряє наявність оновлень у фоновому режимі та повідомляє вас, коли воно готове.',
+          'Multitasker автоматично перевіряє наявність оновлень у фоновому режимі та повідомляє вас, коли воно готове.',
         branchCommit: (branch, commit) => `Гілка ${branch} · Коміт ${commit}`,
         never: 'ніколи',
         justNow: 'щойно',
@@ -394,7 +395,7 @@ export const uk = defineLocale({
         noneParen: '(немає)',
         notSet: 'Не встановлено',
         commaSeparated: 'значення, розділені комами',
-        loading: 'Завантаження конфігурації Hermes...',
+        loading: 'Завантаження конфігурації Multitasker...',
         emptyTitle: 'Нічого не налаштовано',
         emptyDesc: 'У цьому розділі немає параметрів для налаштування.',
         failedLoad: 'Не вдалося завантажити налаштування',
@@ -431,7 +432,7 @@ export const uk = defineLocale({
         title: 'Підключення до шлюзу',
         envOverride: 'заміна з environment variables',
         intro:
-          'Hermes Desktop за замовчуванням запускає власний локальний шлюз. Використовуйте віддалений шлюз, коли хочете, щоб ця програма керувала вже запущеним бекендом Hermes на іншому комп’ютері або за довіреним проксі-сервером. Виберіть профіль нижче, щоб надати йому власний віддалений хост.',
+          'Multitasker Desktop за замовчуванням запускає власний локальний шлюз. Використовуйте віддалений шлюз, коли хочете, щоб ця програма керувала вже запущеним бекендом Multitasker на іншому комп’ютері або за довіреним проксі-сервером. Виберіть профіль нижче, щоб надати йому власний віддалений хост.',
         appliesTo: 'Застосовується до',
         allProfiles: 'Усі профілі',
         defaultConnection: 'Підключення за замовчуванням для кожного профілю, який не має власної заміни.',
@@ -441,10 +442,10 @@ export const uk = defineLocale({
         envOverrideDesc:
           'Скиньте HERMES_DESKTOP_REMOTE_URL та HERMES_DESKTOP_REMOTE_TOKEN, щоб використовувати збережене налаштування нижче.',
         localTitle: 'Локальний шлюз',
-        localDesc: 'Запустіть приватний бекенд Hermes на localhost. Це значення за замовчуванням і працює в автономному режимі.',
+        localDesc: 'Запустіть приватний бекенд Multitasker на localhost. Це значення за замовчуванням і працює в автономному режимі.',
         remoteTitle: 'Віддалений шлюз',
         remoteDesc:
-          'Підключіть цей десктоп-інтерфейс до віддаленого бекенду Hermes. Хостовані шлюзи використовують OAuth або ім’я користувача та пароль; самостійно розміщені можуть використовувати сеансовий токен.',
+          'Підключіть цей десктоп-інтерфейс до віддаленого бекенду Multitasker. Хостовані шлюзи використовують OAuth або ім’я користувача та пароль; самостійно розміщені можуть використовувати сеансовий токен.',
         remoteUrlTitle: 'Віддалена URL-адреса',
         remoteUrlDesc: 'Базова URL-адреса віддаленого бекенду. Підтримуються префікси шляху, наприклад /hermes.',
         probing: 'Перевірка способу аутентифікації цього шлюзу…',
@@ -478,9 +479,9 @@ export const uk = defineLocale({
         enterUrlFirst: 'Спочатку введіть віддалену URL-адресу.',
         restartingTitle: 'Перезавантаження підключення до шлюзу',
         savedTitle: 'Налаштування шлюзу збережено',
-        restartingMessage: 'Hermes Desktop повторно підключиться, використовуючи збережені налаштування.',
+        restartingMessage: 'Multitasker Desktop повторно підключиться, використовуючи збережені налаштування.',
         savedMessage: 'Збережено для наступного перезапуску.',
-        connectedTo: (baseUrl, version) => `Підключено до ${baseUrl}${version ? ` · Hermes ${version}` : ''}`,
+        connectedTo: (baseUrl, version) => `Підключено до ${baseUrl}${version ? ` · Multitasker ${version}` : ''}`,
         reachableTitle: 'Віддалений шлюз доступний',
         signedOutTitle: 'Вийшло з системи',
         signedOutMessage: 'Очищено сеанс віддаленого шлюзу.',
@@ -552,13 +553,13 @@ export const uk = defineLocale({
         connectAccount: 'Підключити обліковий запис',
         haveApiKey: 'У вас є API-ключ?',
         intro:
-          'Увійдіть за допомогою підписки — не потрібно копіювати API-ключ. Hermes запускає вхід у браузері для вас тут, у програмі.',
+          'Увійдіть за допомогою підписки — не потрібно копіювати API-ключ. Multitasker запускає вхід у браузері для вас тут, у програмі.',
         connected: 'Підключено',
         collapse: 'Згорнути',
         connectAnother: 'Підключити іншого постачальника',
         otherProviders: 'Інші постачальники',
         removeConfirm: provider => `Видалити ${provider}?`,
-        removeExternal: (provider, command) => `${provider} керується ззовні Hermes. Видаліть його за допомогою ${command}.`,
+        removeExternal: (provider, command) => `${provider} керується ззовні Multitasker. Видаліть його за допомогою ${command}.`,
         removeKeyManaged: provider => `${provider} налаштовано з API-ключа. Видаліть його в розділі API-ключі.`,
         removedTitle: 'Обліковий запис видалено',
         removedMessage: provider => `${provider} було видалено.`,
@@ -721,7 +722,7 @@ export const uk = defineLocale({
       },
       nav: {
         newChat: { title: 'Нова сесія', detail: 'Почати нову сесію' },
-        settings: { title: 'Налаштування', detail: 'Налаштувати Hermes desktop' },
+        settings: { title: 'Налаштування', detail: 'Налаштувати Multitasker desktop' },
         skills: { title: 'Навички та інструменти', detail: 'Увімкнути навички, набори інструментів та провайдерів' },
         messaging: { title: 'Повідомлення', detail: 'Налаштування Telegram, Slack, Discord тощо' },
         artifacts: { title: 'Артефакти', detail: 'Перегляд згенерованих результатів' }
@@ -743,9 +744,9 @@ export const uk = defineLocale({
       noSessions: 'Поки немає сесій.',
       gatewayRunning: 'Шлюз повідомлень запущено',
       gatewayStopped: 'Шлюз повідомлень зупинено',
-      hermesActiveSessions: (version, count) => `Hermes ${version} · Активних сесій ${count}`,
+      hermesActiveSessions: (version, count) => `Multitasker ${version} · Активних сесій ${count}`,
       restartMessaging: 'Перезапустити обмін повідомленнями',
-      updateHermes: 'Оновити Hermes',
+      updateHermes: 'Оновити Multitasker',
       actionRunning: 'виконується',
       actionDone: 'виконано',
       actionFailed: 'не вдалося',
@@ -949,7 +950,7 @@ export const uk = defineLocale({
       deleteDescMid: ' та видалить його ',
       deleteDescSuffix: ' каталог. Це не можна скасувати.',
       deleting: 'Видалення...',
-      createDesc: 'Профілі є незалежними середовищами Hermes: окремі конфігурації, навички та SOUL.md.',
+      createDesc: 'Профілі є незалежними середовищами Multitasker: окремі конфігурації, навички та SOUL.md.',
       nameLabel: 'Назва',
       cloneFrom: 'Клонувати з',
       cloneFromNone: 'Немає (порожньо)',
@@ -1034,7 +1035,7 @@ export const uk = defineLocale({
       topOfHour: 'На початку кожної години',
       everyHourAt: minute => `Щогодини о :${minute}`,
       newCron: 'Новий cron',
-      emptyDescNew: 'Заплануйте промпт для виконання за виразом cron. Hermes виконає його та доставити результати до вибраного вами пункту призначення.',
+      emptyDescNew: 'Заплануйте промпт для виконання за виразом cron. Multitasker виконає його та доставити результати до вибраного вами пункту призначення.',
       emptyDescSearch: 'Спробуйте ширший пошуковий запит.',
       emptyTitleNew: 'Поки що немає запланованих завдань',
       emptyTitleSearch: 'Збігів не знайдено',
@@ -1177,12 +1178,12 @@ export const uk = defineLocale({
   composer: {
       message: 'Повідомлення',
       wakingProfile: profile => `Пробудження ${profile}...`,
-      placeholderStarting: 'Запуск Hermes...',
-      placeholderReconnecting: 'Відновлення з’єднання з Hermes…',
+      placeholderStarting: 'Запуск Multitasker...',
+      placeholderReconnecting: 'Відновлення з’єднання з Multitasker…',
       placeholderFollowUp: 'Надіслати уточнення',
       newSessionPlaceholders: [
         'Що ми будуємо?',
-        'Дайте Hermes завдання',
+        'Дайте Multitasker завдання',
         'Що у вас на думці?',
         'Опишіть, що вам потрібно',
         'Яку проблему ми вирішуємо?',
@@ -1230,7 +1231,7 @@ export const uk = defineLocale({
         '/resume': 'відновити попередню сесію',
         '/details': 'налаштувати рівень деталізації транскрипції',
         '/copy': 'скопіювати виділене або останнє повідомлення асистента',
-        '/quit': 'вийти з Hermes'
+        '/quit': 'вийти з Multitasker'
       },
       hotkeyDescs: {
         'composer.mention': 'посилання на файли, папки, URL-адреси, git',
@@ -1243,7 +1244,7 @@ export const uk = defineLocale({
         'composer.history': 'перемикати спливаюче вікно / історію'
       },
       attachUrlTitle: 'Додати URL-адресу',
-      attachUrlDesc: 'Hermes отримає сторінку та включить її як контекст для цього ходу.',
+      attachUrlDesc: 'Multitasker отримає сторінку та включить її як контекст для цього ходу.',
       urlPlaceholder: 'https://example.com/post',
       urlHintPre: 'Вкажіть повну URL-адресу, наприклад ',
       attach: 'Додати',
@@ -1319,7 +1320,7 @@ export const uk = defineLocale({
           fetch: 'Завантаження…',
           pull: 'Майже готово…',
           pydeps: 'Завершення…',
-          restart: 'Перезапуск Hermes…',
+          restart: 'Перезапуск Multitasker…',
           manual: 'Оновлення з терміналу',
           error: 'Оновлення призупинено'
       },
@@ -1327,29 +1328,29 @@ export const uk = defineLocale({
       checkFailedTitle: 'Не вдалося перевірити наявність оновлень',
       tryAgain: 'Спробувати ще раз',
       notAvailableTitle: 'Оновлення недоступне',
-      unsupportedMessage: 'Ця версія Hermes не може оновлюватися зсередини програми.',
+      unsupportedMessage: 'Ця версія Multitasker не може оновлюватися зсередини програми.',
       connectionRetry: 'Перевірте підключення та спробуйте ще раз.',
       latestBody: 'У вас встановлена остання версія.',
       latestBodyBackend: 'Бекенд працює на останній версії.',
       allSetTitle: 'Все готово',
       availableTitle: 'Доступне нове оновлення',
-      availableBody: 'Нова версія Hermes готова до встановлення.',
+      availableBody: 'Нова версія Multitasker готова до встановлення.',
       availableTitleBackend: 'Доступне оновлення бекенду',
-      availableBodyBackend: 'Більш нова версія підключеного бекенду Hermes готова до встановлення.',
+      availableBodyBackend: 'Більш нова версія підключеного бекенду Multitasker готова до встановлення.',
       availableBodyNoChangelog: 'Доступна новіша версія. Примітки до випуску недоступні для цього типу встановлення.',
       updateNow: 'Оновити зараз',
       maybeLater: 'Можливо пізніше',
       moreChanges: count => `+ ${count} додаткових змін${count === 1 ? '' : 'и'}.`,
       manualTitle: 'Оновлення з терміналу',
-      manualBody: 'Ви встановили Hermes з командного рядка, тому оновлення також виконуються там. Вставте це у свій термінал:',
-      manualPickedUp: 'Hermes підхопить нову версію при наступному запуску.',
+      manualBody: 'Ви встановили Multitasker з командного рядка, тому оновлення також виконуються там. Вставте це у свій термінал:',
+      manualPickedUp: 'Multitasker підхопить нову версію при наступному запуску.',
       copy: 'Копіювати',
       copied: 'Скопійовано',
       done: 'Готово',
-      applyingBody: 'Оновлювач Hermes перейде у власне вікно та перезапустить Hermes після завершення.',
+      applyingBody: 'Оновлювач Multitasker перейде у власне вікно та перезапустить Multitasker після завершення.',
       applyingBodyBackend:
-        'Бекенд застосовує оновлення та перезавантажиться. Hermes автоматично підключиться, коли він знову запрацює.',
-      applyingClose: 'Hermes буде закрито для застосування оновлення.',
+        'Бекенд застосовує оновлення та перезавантажиться. Multitasker автоматично підключиться, коли він знову запрацює.',
+      applyingClose: 'Multitasker буде закрито для застосування оновлення.',
       errorTitle: 'Оновлення не завершилося',
       errorBody: 'Не хвилюйтеся — нічого не втрачено. Ви можете спробувати ще раз зараз.',
       notNow: 'Не зараз',
@@ -1370,7 +1371,7 @@ export const uk = defineLocale({
         skipped: 'Пропущено',
         failed: 'Не вдалося'
       },
-      oneTimeTitle: 'Hermes потребує одноразової інсталяції',
+      oneTimeTitle: 'Multitasker потребує одноразової інсталяції',
       unsupportedDesc: platform =>
         `Автоматична інсталяція при першому запуску поки недоступна на ${platform}. Відкрийте Термінал та виконайте команду нижче, а потім перезапустіть цю програму. Наступні запуски пропустять цей крок.`,
       installCommand: 'Команда встановлення',
@@ -1379,12 +1380,12 @@ export const uk = defineLocale({
       installTo: 'Встановлюється в',
       retryAfterRun: 'Я вже запустив її -- повторити',
       failedTitle: 'Інсталяція не вдалася',
-      settingUpTitle: 'Налаштування агента Hermes',
+      settingUpTitle: 'Налаштування агента Multitasker',
       finishingTitle: 'Завершення',
       failedDesc:
-        'Один з етапів інсталяції завершився невдало. На Windows це може статися, якщо запущено інший CLI або десктопний екземпляр Hermes. Зупиніть всі запущені екземпляри Hermes, а потім повторіть спробу. Перевірте деталі нижче або журнал десктопу для повного перепису.',
+        'Один з етапів інсталяції завершився невдало. На Windows це може статися, якщо запущено інший CLI або десктопний екземпляр Multitasker. Зупиніть всі запущені екземпляри Multitasker, а потім повторіть спробу. Перевірте деталі нижче або журнал десктопу для повного перепису.',
       activeDesc:
-        'Це одноразова процедура налаштування. Інсталятор Hermes завантажує залежності та налаштовує вашу машину. Наступні запуски пропустять цей крок.',
+        'Це одноразова процедура налаштування. Інсталятор Multitasker завантажує залежності та налаштовує вашу машину. Наступні запуски пропустять цей крок.',
       progress: (completed, total) => `${completed} з ${total} етапів завершено`,
       currentStage: stage => ` -- зараз: ${stage}`,
       fetchingManifest: 'Отримання маніфесту інсталятора...',
@@ -1401,10 +1402,10 @@ export const uk = defineLocale({
       reloadRetry: 'Перезавантажити та повторити'
     },
   onboarding: {
-      headerTitle: "Налаштуємо Hermes Agent для вас",
+      headerTitle: "Налаштуємо Multitasker Agent для вас",
       headerDesc: 'Підключіть провайдера моделей, щоб почати спілкування. Більшість опцій потребують лише одного кліку.',
-      preparingInstall: 'Hermes завершує встановлення. Зазвичай це займає менше хвилини під час першого запуску.',
-      starting: 'Запуск Hermes…',
+      preparingInstall: 'Multitasker завершує встановлення. Зазвичай це займає менше хвилини під час першого запуску.',
+      starting: 'Запуск Multitasker…',
       lookingUpProviders: 'Пошук провайдерів...',
       collapse: 'Згорнути',
       otherProviders: 'Інші провайдери',
@@ -1412,7 +1413,7 @@ export const uk = defineLocale({
       chooseLater: "Виберу провайдера пізніше",
       recommended: 'Рекомендовано',
       connected: 'Підключено',
-      featuredPitch: 'Одна підписка, 300+ передових моделей — рекомендований спосіб використання Hermes',
+      featuredPitch: 'Одна підписка, 300+ передових моделей — рекомендований спосіб використання Multitasker',
       openRouterPitch: 'Один ключ, сотні моделей — надійний варіант за замовчуванням',
       apiKeyOptions: {
         openrouter: {
@@ -1424,7 +1425,7 @@ export const uk = defineLocale({
         xai: { short: 'Моделі Grok', description: 'Прямий доступ до моделей xAI Grok.' },
         local: {
           short: 'самостійне розміщення',
-          description: 'Вкажіть Hermes на локальний або самостійно розміщений OpenAI-сумісний endpoint (vLLM, llama.cpp, Ollama тощо).'
+          description: 'Вкажіть Multitasker на локальний або самостійно розміщений OpenAI-сумісний endpoint (vLLM, llama.cpp, Ollama тощо).'
         }
       },
       backToSignIn: 'Повернутися до входу',
@@ -1437,8 +1438,8 @@ export const uk = defineLocale({
       update: 'Оновлення',
       flowSubtitles: {
         pkce: 'Відкриває браузер для входу, потім продовжує тут',
-        device_code: 'Відкриває сторінку підтвердження у вашому браузері — Hermes підключається автоматично',
-        loopback: 'Відкриває браузер для входу — Hermes підключається автоматично',
+        device_code: 'Відкриває сторінку підтвердження у вашому браузері — Multitasker підключається автоматично',
+        loopback: 'Відкриває браузер для входу — Multitasker підключається автоматично',
         external: 'Увійдіть один раз у терміналі, а потім поверніться до чату'
       },
       startingSignIn: provider => `Запуск входу для ${provider}...`,
@@ -1449,12 +1450,12 @@ export const uk = defineLocale({
       pickDifferentProvider: 'Виберіть іншого провайдера',
       signInWith: provider => `Увійти з ${provider}`,
       openedBrowser: provider => `Ми відкрили ${provider} у вашому браузері.`,
-      authorizeThere: 'Авторизуйте Hermes там.',
+      authorizeThere: 'Авторизуйте Multitasker там.',
       copyAuthCode: 'Скопіювати код авторизації та вставити його нижче.',
       pasteAuthCode: 'Вставити код авторизації',
       reopenAuthPage: 'Відкрити сторінку авторизації повторно',
       autoBrowser: provider =>
-        `Ми відкрили ${provider} у вашому браузері. Авторизуйте Hermes там, і ви будете підключені автоматично — нічого не потрібно копіювати або вставляти.`,
+        `Ми відкрили ${provider} у вашому браузері. Авторизуйте Multitasker там, і ви будете підключені автоматично — нічого не потрібно копіювати або вставляти.`,
       reopenSignInPage: 'Відкрити сторінку входу повторно',
       waitingAuthorize: 'Очікуємо вашої авторизації...',
       externalPending: provider =>
@@ -1541,7 +1542,7 @@ export const uk = defineLocale({
         update: 'оновити',
         updateInProgress: 'Оновлення в процесі',
         commitsBehind: (count, branch) => `${count} коміт${count === 1 ? '' : 'и'} позаду ${branch}`,
-        desktopVersion: version => `Hermes Desktop v${version}`,
+        desktopVersion: version => `Multitasker Desktop v${version}`,
         backendVersion: version => `Backend v${version}`,
         clientLabel: version => `клієнт v${version}`,
         backendLabel: version => `бек-енд v${version}`,
@@ -1557,7 +1558,7 @@ export const uk = defineLocale({
         gatewayChecking: 'перевірка',
         gatewayConnecting: 'підключення',
         gatewayOffline: 'офлайн',
-        gatewayTitle: 'Статус шлюзу висновків Hermes',
+        gatewayTitle: 'Статус шлюзу висновків Multitasker',
         agentRoom: 'Кімната агентів',
         openAgentRoom: 'Відкрити Кімнату агентів',
         agents: 'Агенти',
@@ -1629,7 +1630,7 @@ export const uk = defineLocale({
       binaryTitle: 'Схоже на бінарний файл',
       binaryBody: label => `Перегляд файлу ${label} може відображати нечитабельний текст.`,
       largeTitle: 'Цей файл великий',
-      largeBody: (label, size) => `${label} має розмір ${size}. Hermes покаже лише перші 512 КБ.`,
+      largeBody: (label, size) => `${label} має розмір ${size}. Multitasker покаже лише перші 512 КБ.`,
       previewAnyway: 'Переглянути все одно',
       truncated: 'Показано перші 512 КБ.',
       noInlineTitle: 'Немає вбудованого перегляду',
@@ -1659,26 +1660,26 @@ export const uk = defineLocale({
         serverNotFound: 'Сервер не знайдено',
         failedToLoad: 'Перегляд не вдалося завантажити',
         tryAgain: 'Спробувати ще раз',
-        restarting: 'Hermes перезапускається...',
-        askRestart: 'Попросити Hermes перезапустити сервер',
-        lookingRestart: taskId => `Hermes шукає сервер перегляду для перезапуску (${taskId})`,
+        restarting: 'Multitasker перезапускається...',
+        askRestart: 'Попросити Multitasker перезапустити сервер',
+        lookingRestart: taskId => `Multitasker шукає сервер перегляду для перезапуску (${taskId})`,
         restartingTitle: 'Перезапуск сервера перегляду',
-        restartingMessage: 'Hermes працює у фоновому режимі. Слідкуйте за консоллю перегляду, щоб дізнатися про прогрес.',
+        restartingMessage: 'Multitasker працює у фоновому режимі. Слідкуйте за консоллю перегляду, щоб дізнатися про прогрес.',
         startRestartFailed: message => `Не вдалося запустити перезапуск сервера: ${message}`,
         restartFailed: 'Перезапуск сервера не вдався',
         hideConsole: 'Приховати консоль перегляду',
         showConsole: 'Показати консоль перегляду',
         hideDevTools: 'Приховати DevTools перегляду',
         openDevTools: 'Відкрити DevTools перегляду',
-        finishedRestarting: message => `Hermes завершив перезапуск сервера перегляду${message ? `: ${message}` : ''}`,
+        finishedRestarting: message => `Multitasker завершив перезапуск сервера перегляду${message ? `: ${message}` : ''}`,
         failedRestarting: message => `Перезапуск сервера не вдався: ${message}`,
         unknownError: 'невідома помилка',
         restartedTitle: 'Сервер перегляду перезапущено',
         reloadingNow: 'Перезавантаження перегляду зараз.',
         restartFailedTitle: 'Перезапуск перегляду не вдався',
-        restartFailedMessage: 'Hermes не зміг перезапустити сервер.',
+        restartFailedMessage: 'Multitasker не зміг перезапустити сервер.',
         stillWorking:
-          'Hermes все ще працює, але результат перезапуску ще не надійшов. Команда сервера може виконуватися у фоновому режимі.',
+          'Multitasker все ще працює, але результат перезапуску ще не надійшов. Команда сервера може виконуватися у фоновому режимі.',
         workspaceReloading: 'Робочий простір змінено, перевантаження перегляду',
         fileChanged: url => `Файл змінено, перевантаження перегляду: ${url}`,
         filesChanged: (count, url) => `${count} зміни файлів, перевантаження перегляду: ${url}`,
@@ -1695,7 +1696,7 @@ export const uk = defineLocale({
       thread: {
         loadingSession: 'Завантаження сесії',
         showEarlier: 'Показати попередні повідомлення',
-        loadingResponse: 'Hermes завантажує відповідь',
+        loadingResponse: 'Multitasker завантажує відповідь',
         thinking: 'Міркує',
         today: time => `Сьогодні, ${time}`,
         yesterday: time => `Вчора, ${time}`,
@@ -1722,7 +1723,7 @@ export const uk = defineLocale({
         attachingFile: 'Додається…'
       },
       approval: {
-        gatewayDisconnected: 'Hermes gateway не підключено',
+        gatewayDisconnected: 'Multitasker gateway не підключено',
         sendFailed: 'Не вдалося надіслати відповідь схвалення',
         run: 'Запустити',
         command: 'Команда',
@@ -1733,12 +1734,12 @@ export const uk = defineLocale({
         reject: 'Відхилити',
         alwaysTitle: 'Чи завжди дозволяти цю команду?',
         alwaysDescription: pattern =>
-          `Це додасть шаблон "${pattern}" до вашого постійного списку дозволених (~/.hermes/config.yaml). Hermes більше не запитуватиме про подібні команди — в цій сесії чи будь-якій майбутній.`,
+          `Це додасть шаблон "${pattern}" до вашого постійного списку дозволених (~/.hermes/config.yaml). Multitasker більше не запитуватиме про подібні команди — в цій сесії чи будь-якій майбутній.`,
         alwaysAllow: 'Завжди дозволяти'
       },
       clarify: {
         notReady: 'Запит на уточнення ще не готовий',
-        gatewayDisconnected: 'Hermes gateway не підключено',
+        gatewayDisconnected: 'Multitasker gateway не підключено',
         sendFailed: 'Не вдалося надіслати відповідь на уточнення',
         loadingQuestion: 'Завантаження питання…',
         other: 'Інше (введіть свою відповідь)',
@@ -1774,14 +1775,14 @@ export const uk = defineLocale({
       }
     },
   prompts: {
-      gatewayDisconnected: 'З’єднання з Hermes gateway відсутнє',
+      gatewayDisconnected: 'З’єднання з Multitasker gateway відсутнє',
       sudoSendFailed: 'Не вдалося надіслати пароль sudo',
       secretSendFailed: 'Не вдалося надіслати секретний ключ',
       sudoTitle: 'Пароль адміністратора',
-      sudoDesc: 'Hermes потребує ваш пароль sudo для виконання привілейованої команди. Він надсилається лише вашому локальному агенту.',
+      sudoDesc: 'Multitasker потребує ваш пароль sudo для виконання привілейованої команди. Він надсилається лише вашому локальному агенту.',
       sudoPlaceholder: 'пароль sudo',
       secretTitle: 'Необхідний секретний ключ',
-      secretDesc: 'Hermes потребує облікові дані для продовження.',
+      secretDesc: 'Multitasker потребує облікові дані для продовження.',
       secretPlaceholder: 'значення секретного ключа'
     },
   desktop: {
@@ -1822,14 +1823,14 @@ export const uk = defineLocale({
       archiveFailed: 'Архівування не вдалося',
       cwdChangeFailed: 'Зміна робочого каталогу не вдалася',
       cwdStagedTitle: 'Робочий каталог підготовлено',
-      cwdStagedMessage: 'Перезапустіть бекенд Hermes Desktop, щоб застосувати зміни робочого каталогу до цього активного сеансу.',
+      cwdStagedMessage: 'Перезапустіть бекенд Multitasker Desktop, щоб застосувати зміни робочого каталогу до цього активного сеансу.',
       modelSwitchFailed: 'Перемикання моделі не вдалося',
       sessionExported: 'Сеанс експортовано',
       sessionExportFailed: 'Не вдалося експортувати сеанс',
       imageSaved: 'Зображення збережено',
       downloadStarted: 'Завантаження розпочато',
-      restartToUseSaveImage: 'Перезапустіть Hermes Desktop, щоб використати "Зберегти зображення".',
-      restartToSaveImages: 'Перезапустіть Hermes Desktop для збереження зображень',
+      restartToUseSaveImage: 'Перезапустіть Multitasker Desktop, щоб використати "Зберегти зображення".',
+      restartToSaveImages: 'Перезапустіть Multitasker Desktop для збереження зображень',
       imageDownloadFailed: 'Завантаження зображення не вдалося',
       openImage: 'Відкрити зображення',
       downloadImage: 'Завантажити зображення',

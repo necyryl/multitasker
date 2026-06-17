@@ -321,7 +321,7 @@ const BOOT_FAKE_STEP_MS = (() => {
   if (!Number.isFinite(raw) || raw <= 0) return 650
   return Math.max(120, raw)
 })()
-const APP_NAME = 'Hermes'
+const APP_NAME = 'Multitasker'
 const TITLEBAR_HEIGHT = 34
 const MACOS_TRAFFIC_LIGHTS_HEIGHT = 14
 const WINDOW_BUTTON_POSITION = {
@@ -3857,7 +3857,7 @@ function openOauthLoginWindow(baseUrl) {
       win = new BrowserWindow({
         width: 520,
         height: 720,
-        title: 'Sign in to Hermes gateway',
+        title: 'Sign in to Multitasker gateway',
         autoHideMenuBar: true,
         webPreferences: {
           contextIsolation: true,
@@ -5081,7 +5081,7 @@ function createSessionWindow(sessionId, { watch = false } = {}) {
       height: SESSION_WINDOW_MIN_HEIGHT,
       minWidth: SESSION_WINDOW_MIN_WIDTH,
       minHeight: SESSION_WINDOW_MIN_HEIGHT,
-      title: 'Hermes',
+      title: APP_NAME,
       titleBarStyle: 'hidden',
       titleBarOverlay: getTitleBarOverlayOptions(),
       trafficLightPosition: IS_MAC ? WINDOW_BUTTON_POSITION : undefined,
@@ -5140,7 +5140,7 @@ function createWindow() {
     height: 800,
     minWidth: 400,
     minHeight: 620,
-    title: 'Hermes',
+    title: APP_NAME,
     // Frameless title bar on every platform so the renderer can paint the
     // "hide sidebar" button (and other left-side titlebar tools) flush with
     // the top edge — matching the macOS layout where the traffic lights sit
@@ -5613,7 +5613,7 @@ ipcMain.handle('hermes:notify', (_event, payload) => {
   // and the body click still works.
   const actions = Array.isArray(payload?.actions) ? payload.actions : []
   const notification = new Notification({
-    title: payload?.title || 'Hermes',
+    title: payload?.title || APP_NAME,
     body: payload?.body || '',
     silent: Boolean(payload?.silent),
     actions: actions.map(action => ({ type: 'button', text: String(action?.text || '') }))

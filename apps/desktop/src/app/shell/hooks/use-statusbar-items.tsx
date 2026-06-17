@@ -16,6 +16,7 @@ import {
   Loader2,
   Sparkles,
   Terminal,
+  Users,
   Zap,
   ZapFilled
 } from '@/lib/icons'

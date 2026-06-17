@@ -885,6 +885,10 @@ export const zh: Translations = {
     tokens: value => `${value} 词元`
   },
 
+  agentRoom: {
+    title: '代理室'
+  },
+
   commandCenter: {
     close: '关闭命令中心',
     paletteTitle: '命令面板',
@@ -1760,6 +1764,8 @@ export const zh: Translations = {
       gatewayConnecting: '连接中',
       gatewayOffline: '离线',
       gatewayTitle: 'Hermes 推理网关状态',
+      agentRoom: '代理室',
+      openAgentRoom: '打开代理室',
       agents: '代理',
       closeAgents: '关闭代理',
       openAgents: '打开代理',
